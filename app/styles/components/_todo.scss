@@ -1,0 +1,44 @@
+.todo {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: 1rem;
+  transition: background .3s ease;
+
+  p, input {
+    margin: 0;
+  }
+
+  > :first-child {
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.todo__subtext {
+  color: #999;
+}
+.todoTitle {
+  transform: translate(-26px);
+}
+.todo-completed {
+  p, .todo-subtext {
+    color: $light-color;
+    text-decoration: line-through;
+  }
+}
+
+.listStyle{
+  background: rgba(31, 73, 115, 0.1);
+}
+
+.wrapperTasks {
+
+}
+
+.checkboxWrapper {
+  float: left;
+}

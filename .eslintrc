@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-no-bind": 0,
+    "arrow-body-style": 0,
+    "consistent-return": 0,
+    "no-underscore-dangle": 0,
+    "quotes":0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "max-len": [
+      2,
+      120,
+      2,
+      {
+        "ignoreUrls": true
+      }
+    ],
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  }
+}

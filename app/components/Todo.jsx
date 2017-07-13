@@ -28,7 +28,7 @@ export var Todo = React.createClass({
             <input id="someSwitchOptionPrimary" checked={completed} type="checkbox"/>
             <label htmlFor="someSwitchOptionPrimary" className="label-primary"></label>
           </div>
-          <div className={style.wrapperTasks}>
+          <div className={completed ? style.wrapperTasksComplete : style.wrapperTasks}>
             <div className={style.todoTitle}>{text}</div>
             <div className={style.todo__subtext}>{renderDate()}</div>
           </div>

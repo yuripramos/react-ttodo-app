@@ -89,6 +89,9 @@ body {
     color: $light-color;
     text-decoration: line-through;
   }
+  .todoTitle {
+    text-decoration: line-through;
+  }
 }
 
 .list-group-item {

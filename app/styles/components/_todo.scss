@@ -24,11 +24,10 @@
 .todoTitle {
   transform: translate(-26px);
 }
-.todo-completed {
-  p, .todo-subtext {
-    color: $light-color;
-    text-decoration: line-through;
-  }
+
+.wrapperTasksComplete {
+  text-decoration: line-through;
+  color: #999;
 }
 
 .listStyle{

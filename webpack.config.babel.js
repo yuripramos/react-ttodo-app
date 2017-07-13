@@ -4,8 +4,15 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import webpack from 'webpack';
 import path from 'path';
+import envFile from 'node-env-file';
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
+try {
+  envFile(path.join(__dirname, 'config/'+ process.env.NODE_ENV + '.env'))
+} catch(e) {
+
+}
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.resolve(__dirname, 'index.html'),
@@ -37,14 +44,18 @@ const FaviconPlugin = new FaviconsWebpackPlugin({
   },
 });
 
+
 const CleanPlugin = new CleanWebpackPlugin(['public']);
 
-// const DefinePlugin = new webpack.DefinePlugin({
-//   'process.env': {
-//     NODE_ENV: JSON.stringify('local'),
-//     API_URL: JSON.stringify('http://localhost:8080/data'),
-//   },
-// })
+const DefinePlugin = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    API_KEY: JSON.stringify(process.env.API_KEY),
+    AUTH_DOMAIN: JSON.stringify(process.env.AUTH_DOMAIN),
+    DATABASE_URL: JSON.stringify(process.env.DATABASE_URL),
+    STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET),
+  },
+})
 
 const config = {
   devServer: {
@@ -107,8 +118,8 @@ const config = {
       },
     ],
   },
-  plugins: [CleanPlugin, HTMLWebpackPluginConfig, ExtractTextPluginCSS],
-  devtool: 'cheap-source-map',
+  plugins: [CleanPlugin, DefinePlugin, HTMLWebpackPluginConfig, ExtractTextPluginCSS],
+  devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-source-map',
 };
 
 module.exports = config;

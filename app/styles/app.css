@@ -129,7 +129,7 @@ body {
 [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
-  top: .1em;     
+  top: .1em;
   left: 0.1em;
   font-size: 1.3em;
   line-height: 0.8;
@@ -161,7 +161,7 @@ body {
 /* accessibility */
 [type="checkbox"]:checked:focus + label:before,
 [type="checkbox"]:not(:checked):focus + label:before {
-  border: 2px dotted blue;
+  border: 1px solid blue;
 }
 
 /* hover style just for information */

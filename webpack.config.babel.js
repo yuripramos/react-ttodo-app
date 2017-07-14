@@ -10,8 +10,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 try {
   envFile(path.join(__dirname, 'config/'+ process.env.NODE_ENV + '.env'))
-} catch(e) {
-
+} catch (e) {
 }
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -29,7 +28,7 @@ const ExtractTextPluginCSS = new ExtractTextPlugin({
 
 
 const FaviconPlugin = new FaviconsWebpackPlugin({
-  logo: path.resolve(__dirname, 'src/assets/images/favicon.png'),
+  logo: path.resolve(__dirname, 'app/assets/images/favicon.png'),
   icons: {
     android: false,
     appleIcon: false,
@@ -94,7 +93,7 @@ const config = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: [ ['es2015',{ modules: false }], 'react'],// insert ] 
+          presets: [ ['es2015',{ modules: false }], 'react'],// insert ]
           plugins: ['transform-object-rest-spread'],
         },
       },

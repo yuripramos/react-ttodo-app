@@ -7,7 +7,6 @@ import TodoApp from './components/TodoApp.jsx';
 import Login from './components/Login.js';
 import './styles/app.css';
 import { startAddTodos } from './actions/actions.jsx';
-
 var store = require('configureStore').configure();
 
 const Wildcard = () => <Redirect to="/" />;

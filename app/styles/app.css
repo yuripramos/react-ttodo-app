@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background: rgba(40, 210, 228, 0.77);
+  /*background: rgba(40, 210, 228, 0.77);*/
 }
 .container {
   background: $light-grey;
@@ -171,4 +171,10 @@ label:hover:before {
 
 .label-primary {
   background: none;
+}
+
+
+
+.box-login .btn-login {
+  width: 200px;
 }

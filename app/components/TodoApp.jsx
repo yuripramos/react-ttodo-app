@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import * as Redux from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 import * as actions from '../actions/actions.jsx';
 import TodoList from './TodoList.jsx'
 import AddTodo from './AddTodo.jsx';
@@ -9,17 +10,23 @@ import svgUrl from '../assets/svg/todo.svg';
 import Typist from 'react-typist';
 import pageActions from '../styles/components/page_actions.scss';
 
-export var TodoApp = React.createClass({
+export class TodoApp extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+  }
+
   onLogout(e) {
     e.preventDefault();
     const { dispatch } = this.props;
-
+    // make dispatch accessible
     dispatch(actions.startLogout());
-  },
+  }
+
   render() {
     return (
       <div>
-        <div className={pageActions.logout}><a href="#" onClick={this.onLogout}>Logout</a></div>
+        <div className={pageActions.logout}><Link to="/" onClick={this.onLogout}>Logout</Link></div>
         <div className="container text-center">
           <div className="logo">
             <img src={svgUrl}/>
@@ -36,6 +43,6 @@ export var TodoApp = React.createClass({
       </div>
     )
   }
-});
+}
 
 export default Redux.connect()(TodoApp);

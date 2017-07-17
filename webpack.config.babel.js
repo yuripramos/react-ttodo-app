@@ -63,7 +63,7 @@ const config = {
     host: '0.0.0.0',
     historyApiFallback: true,
   },
-  entry: './app/app.jsx',
+  entry: './app/index.js',
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',

@@ -70,7 +70,7 @@ const config = {
     filename: 'bundle.[hash].js',
     chunkFilename: 'chunk.[hash].js',
   },
-  resolve : {
+  resolve: {
     alias: {
       applicationStyles: 'app/styles/app.scss',
       actions: 'app/actions/actions.jsx',
@@ -93,7 +93,7 @@ const config = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: [ ['es2015',{ modules: false }], 'react'],// insert ]
+          presets: [['es2015', { modules: false }], 'react'],
           plugins: ['transform-object-rest-spread'],
         },
       },
